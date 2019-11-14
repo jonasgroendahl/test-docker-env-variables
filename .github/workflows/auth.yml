@@ -10,11 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: "do stuff"
-        env:
-            AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-            AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-            AWS_SESSION_TOKEN: ${{secrets.AWS_SESSION_TOKEN}}
-        uses: actions/aws/cli@master
+      - uses: actions/aws/cli@master
         with:
           args: aws sts get-caller-identity
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          AWS_SESSION_TOKEN: ${{secrets.AWS_SESSION_TOKEN}}
