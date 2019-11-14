@@ -17,4 +17,4 @@ jobs:
             AWS_SESSION_TOKEN: ${{secrets.AWS_SESSION_TOKEN}}
         uses: actions/aws/cli@master
         with:
-          args: aws configure help
+          args: aws sts get-caller-identity
