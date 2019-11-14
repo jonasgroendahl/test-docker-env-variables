@@ -15,7 +15,7 @@ jobs:
           python-version: '3.7.1' # Version range or exact version of a Python version to use, using semvers version range syntax.
           architecture: 'x64' # (x64 or x86)
       - name: 'Get AWS CLI'
-      - run: |
+        run: |
           curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
           sudo ./aws/install
