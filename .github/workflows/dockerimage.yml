@@ -12,6 +12,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: |
-        echo ${secrets.SECRET} >> Dockerfile
+        echo "ENV ${{secrets.SECRET}}" >> Dockerfile
         docker build . --file Dockerfile --tag test-image
         
